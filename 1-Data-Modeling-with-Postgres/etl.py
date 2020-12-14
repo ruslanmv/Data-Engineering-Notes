@@ -24,9 +24,10 @@ def process_song_file(cur, filepath):
                   'duration'])
     song_data=df_song.values.tolist()[0]
     cur.execute(song_table_insert, song_data)
+    
     # insert artist record
     df_artist = DataFrame(df, 
-                columns[
+                columns=[
                     'artist_id',
                     'artist_name',
                     'artist_location',
