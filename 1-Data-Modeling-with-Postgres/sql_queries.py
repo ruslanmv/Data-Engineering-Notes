@@ -9,7 +9,7 @@ time_table_drop = "DROP TABLE IF EXISTS time;"
 # CREATE TABLES
 
 songplay_table_create = ("""create table if not exists songplays(
-                            songplay_id SERIAL PRIMARY KEY NOT NULL, 
+                            songplay_id SERIAL PRIMARY KEY, 
                             start_time timestamp,
                             user_id int NOT NULL,
                             level varchar,
@@ -21,7 +21,7 @@ songplay_table_create = ("""create table if not exists songplays(
                             """)
 
 user_table_create = ("""create table if not exists users(
-                        user_id int PRIMARY KEY  NOT NULL,
+                        user_id int PRIMARY KEY,
                         first_name varchar NOT NULL,
                         last_name varchar  NOT NULL,
                         gender varchar,
@@ -29,7 +29,7 @@ user_table_create = ("""create table if not exists users(
                         """)
 
 song_table_create = ("""create table if not exists songs(
-                        song_id varchar PRIMARY KEY NOT NULL,
+                        song_id varchar PRIMARY KEY,
                         title varchar NOT NULL,
                         artist_id varchar NOT NULL,
                         year int,
@@ -37,7 +37,7 @@ song_table_create = ("""create table if not exists songs(
                         """)
 
 artist_table_create = ("""create table if not exists artists(
-                        artist_id varchar PRIMARY KEY NOT NULL, 
+                        artist_id varchar PRIMARY KEY, 
                         name varchar NOT NULL, 
                         location varchar, 
                         longitude numeric, 
@@ -45,7 +45,7 @@ artist_table_create = ("""create table if not exists artists(
                         """)
 
 time_table_create = ("""create table if not exists time(
-                        start_time timestamp PRIMARY KEY NOT NULL, 
+                        start_time timestamp PRIMARY KEY, 
                         hour int, 
                         day int, 
                         week int, 
